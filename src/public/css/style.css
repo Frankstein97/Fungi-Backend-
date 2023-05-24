@@ -1,0 +1,161 @@
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.chat-input {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.chat-input i {
+  margin-right: 10px;
+}
+
+.chat-input input {
+  flex-grow: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+}
+
+.message-logs {
+  border: 1px solid #ccc;
+  padding: 10px;
+  height: 200px;
+  overflow-y: auto;
+}
+
+.message {
+  margin-bottom: 10px;
+}
+
+.message .sender {
+  font-weight: bold;
+  margin-right: 5px;
+}
+
+.message .content {
+  display: inline-block;
+  background-color: #f2f2f2;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+/* >>>>>El Navbar>>>>>>>>>>> */
+
+nav {
+  background-color: #f2f2f2;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  margin-right: 20px;
+}
+
+.logo img {
+  vertical-align: middle;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+}
+
+.nav-links li {
+  margin-right: 10px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #333;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.nav-links a:hover {
+  background-color: #eaeaea;
+}
+
+
+/* >>>>>>>>>>>>>>>>>>>>> */
+
+/* Estilos generales */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  margin-top: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table th,
+table td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+/* Estilos específicos para la tabla */
+#productsTable th {
+  background-color: #f2f2f2;
+}
+
+#productsTable td {
+  vertical-align: middle;
+}
+
+#productsTable tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+#productsTable tbody tr:hover {
+  background-color: #eaeaea;
+}
+
+/* Estilos para el enlace de inicio */
+a {
+  display: inline-block;
+  margin-top: 20px;
+  text-decoration: none;
+  color: #333;
+  border: 1px solid #333;
+  padding: 10px 20px;
+  background-color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+a:hover {
+  background-color: #333;
+  color: #fff;
+}

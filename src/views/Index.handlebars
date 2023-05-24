@@ -1,0 +1,32 @@
+<h1>Bienvenidxs a mi API <br/>
+pasen pasen, ahora preparo el mate
+</h1>
+<br>
+<br>
+<h2>Para interactuar desde la API</h2>
+<br>
+<p>
+    app.use('/api/products', productRouter)<br>
+    http://localhost:8080/api/products
+</p>
+<br>
+<p>
+    app.use('/api/carts', cartRouter)<br>
+    http://localhost:8080/api/carts
+</p>
+<br>
+<p>
+    app.use('/api/chat', chatRouter)<br>
+    http://localhost:8080/api/chat
+</p>
+<h2>Para interactuar desde el cliente. Se debe pasar el ID en la ruta</h2>
+<br>
+<p> 
+app.use('/products', oneProductRouter)<br>
+http://localhost:8080/products/646cbd47b1ea5fc6fefa5687
+</p>
+<br>
+<p>
+app.use('/carts', oneCartRouter)<br>
+http://localhost:8080/carts/646d109f1f413db9427d855a
+</p>
