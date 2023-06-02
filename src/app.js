@@ -124,6 +124,6 @@ mongoose.connect(
   }
 );
 
-
+// asdsadas
 //aca el problema es que no puede haber dos vaces de datos al mismo tiempo.Todo lo que esta arriba comentado pertenece a otra forma de persistir sesiones que desde el minuto 1:59 ya cambiara.
 // Habria que encontrar la forma de hacer lo que hace el profe en esta clase para que no afecte al funcionamiento de la pagina y cargue todo en el mismos lugar
