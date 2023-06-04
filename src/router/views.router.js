@@ -4,7 +4,7 @@ const router = Router();
 
 //accesos publicos y privados con middlewares
 const publicAccess = (req, res, next) => {
-  if (req.session.user) return res.redirect("/");
+  if (req.session.user) return res.redirect("/products");
   next();
 };
 
@@ -21,7 +21,7 @@ router.get("/login", publicAccess, (req, res) => {
 });
 
 router.get("/", privateAccess, (req, res) => {
-  res.render("profile", {
+  res.render("login", {
     user: req.session.user,
   });
 });
