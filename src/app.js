@@ -55,24 +55,3 @@ app.use(session({
     saveUninitialized: true
 }));
 
-// // Conexión a mongoose
-// const db = "mongodb+srv://francoivannicoletti:1997@backendcoderfn.j1toc90.mongodb.net/?retryWrites=true&w=majority"
-
-// mongoose.set('strictQuery', false)
-// mongoose.connect(db, {
-//     dbName: "ecommerce"
-// }, error => {
-//     if (error) {
-//         console.log('No se pudo conectar a la DB');
-//         return
-//     }
-
-//     // Corriendo el servidor
-//     const httpServer = app.listen(8080, () => console.log('El servidor te esta escuchando...'))
-//     const socketServer = new Server(httpServer)
-//     httpServer.on("error", (e) => console.log("ERROR: " + e))
-
-//     run(socketServer, app)
-// })
-
-

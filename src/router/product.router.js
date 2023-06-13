@@ -25,7 +25,7 @@ productRouter.get('/', async (req, res) => {
     products.nextLink = products.hasNextPage ? `/api/products?page=${products.nextPage}` : null
 
     console.log(JSON.stringify(products, null, 2, '\t'));
-    res.render('products', { products })
+    res.render('products',  {products, user: req.session.user})
 })
 
 productRouter.get('/:pid', async (req, res) => {
