@@ -22,7 +22,7 @@ try {
         }
     
         // Corriendo el servidor
-        const httpServer = app.listen(8080, () => console.log('El servidor te esta escuchando...'))
+        const httpServer = app.listen(8081, () => console.log('El servidor te esta escuchando...'))
         const socketServer = new Server(httpServer)
         httpServer.on("error", (e) => console.log("ERROR: " + e))
     
