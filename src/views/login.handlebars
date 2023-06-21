@@ -1,14 +1,19 @@
-<div>
-    <h1>login</h1>
+{{!-- <img src="Wallpaper.jpg" class="backgroundLogin"/> --}}
+<div class="backgroundLogin">
+     <h1 class="title">HELLO <br>
+         BACKWORLD!!</h1>
+    <div class="loginFormContainer">
     <form id="loginForm">
-    <label> Email</label>
-    <input name="email">
+    <input class="input" placeholder="Email" name="email">
     <br/>
-    <label>Contraseña</label>
-    <input name="password" type="text">
+    <input placeholder="password" name="password" type="text">
+    <br>
     <input type="submit">
     </form>
-    <p>¿No estas registradx? <a href="/register">Registrate aca!!</a></p>
+    <p>¿No estas registradx? 
+    <br>
+    <a href="/register">Registrate aca!!</a>
+    </p>
+    </div>
 </div>
 <script src="/js/login.js"></script>
-{{!-- <script src="../public/js/login.js" type="text/javascript"></script> --}}

@@ -20,7 +20,7 @@ const run = (socketServer, app) => {
     // app.use('/', indexRouter)
     app.use('/api/products', productRouter)
     app.use('/api/carts', cartRouter)
-    app.use('/api/chat', chatRouter)
+    app.use('/api/message', chatRouter)
 
     // Para interactuar desde el cliente. Se debe pasar el ID (ejemplo: http://localhost:8080/carts/646d109f1f413db9427d855a)
     app.use('/products', oneProductRouter) //pasando el ID

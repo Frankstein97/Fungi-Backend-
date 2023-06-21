@@ -1,0 +1,7 @@
+En la ruta sessions.router.js hay que agregar el createHash(password)
+passportconfig.js > register y sessiones
+router condiguracion
+Clase20
+
+Configurar github
+Clase21

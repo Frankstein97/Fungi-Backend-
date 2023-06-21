@@ -1,6 +1,4 @@
 import fs from 'fs'
-// generador de ids ya no se usa 
-// import { nanoid } from "nanoid";
 
 class ProductsManager {
 
@@ -14,37 +12,31 @@ class ProductsManager {
             .then(content => JSON.parse(content))
             .catch(() => {return [] })
     }
+
     // este código toma un array de productos, lo convierte en formato JSON y lo escribe en un archivo
     writeFile = productsArray => {
         return fs.promises.writeFile(this.path, JSON.stringify(productsArray))
     }
 
     // esto sirve para agregar el ID incremental, pero con mongoose no se si servira mas tarde
-    getNextID = async () => {
-        return this.getProducts()
-            .then(products => {
-                const count = products.length
-                return (count > 0) ? products[count-1].id + 1 : 1
-            })
-    }
-    //este el titulo te lo dice
+    // getNextID = async () => {
+    //     return this.getProducts()
+    //         .then(products => {
+    //             const count = products.length
+    //             return (count > 0) ? products[count-1].id + 1 : 1
+    //         })
+    // }
+
+    //este el titulo tambien te lo dice
     getProductsById = async (id) => {
         const products = await this.getProducts()
         const productById = products.find(prod => prod.id == id);
         return productById ?? "Error: No se pudo obtener el producto"
     }
 
-    //se agrega un producto verificando primero que no repita su code, declarar el producto antes no era necesario
+    //se agrega un producto verificando primero que no repita su code.
     addProduct = async (obj) => {
         const products = await this.getProducts()
-        // const product = {
-        //     title: obj.title,
-        //     description: obj.description,
-        //     code: obj.code,
-        //     price: Number(obj.price),
-        //     stock: Number(obj.stock),
-        //     img: [obj.img],
-        // };
         const id = await this.getNextID()
         obj.id = id
         const codes = products.map(prod => prod.code);
@@ -56,7 +48,7 @@ class ProductsManager {
             return obj
         }
     }
-    // ste método busca un producto en el array de productos por su id, 
+    // Este método busca un producto en el array de productos por su id, 
     // lo actualiza con un nuevo objeto y luego escribe el array actualizado.
     updateProduct = async (id, object) => {
         const products = await this.getProducts()
@@ -75,7 +67,6 @@ class ProductsManager {
         const products = await this.getProducts()
         // findIndex se utiliza para encontrar el índice de un elemento en un array que cumpla con una condición.
         const productToDelete = products.findIndex(prod => prod.id == id)
-
         if (!productToDelete) {
             return console.log("Not Found")
         } else {

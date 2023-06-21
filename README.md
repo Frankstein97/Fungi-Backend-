@@ -93,7 +93,7 @@ http://localhost:8080/products/646cbd47b1ea5fc6fefa568b
     http://localhost:8080/api/products
     app.use('/api/carts', cartRouter)
     http://localhost:8080/api/carts
-    app.use('/api/chat', chatRouter)
+    app.use('/api/message', chatRouter)
     http://localhost:8080/api/chat
 
     // Para interactuar desde el cliente. Se debe pasar el ID (ejemplo: http://localhost:8080/carts/646d109f1f413db9427d855a)

@@ -1,8 +1,7 @@
 
-// Para loggin de usuarios
-
 import mongoose from "mongoose";
 
+// Para registro de usuarios, y loggin
 const userCollection ="users";
 const userSchema = new mongoose.Schema({
     first_name: { type: String, required: true },

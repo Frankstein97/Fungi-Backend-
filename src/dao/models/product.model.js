@@ -3,6 +3,7 @@ import mongoosePaginate from "mongoose-paginate-v2";
 
 const productCollection = "products";
 
+//LOS DATOS SE DEBERAN VER ASI COMO//
 // {
 //     "title": "Nombre del hongo",
 //     "description": "Descripción del hongo",
@@ -22,7 +23,8 @@ const productSchema = new mongoose.Schema({
   category: String,
   thumbnail: String,
 });
-// se agrega la capacidad de paginación al modelo de productos, 
+
+// Se agrega la capacidad de paginación al modelo de productos, 
 // lo que facilita la implementación de consultas paginadas en la colección de productos.
 productSchema.plugin(mongoosePaginate);
 const productModel = mongoose.model(productCollection, productSchema);

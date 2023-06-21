@@ -1,0 +1,88 @@
+<h1>Este es el chat de mi API, no se si funcionara, pero aqui estamos!</h1>
+
+<div>
+    <i id="username"></i> <input id='chatbox' type="text">
+</div>
+
+<div id="messageLogs"/>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script src="/js/chat.js"></script>
+
+
+{{!-- //CONVERTIR MESSAGES EN NOTAS PARA DEJAR EN LA API --}}
+    {{!-- <main class="main" >
+      <textarea>This is a sticky note you can type and edit.</textarea>
+
+      <div id="create">+</div> 
+    </main>
+
+
+
+    ----
+
+
+
+/* para la parte vieja del mensaje que se guarda en mongodb
+luego hay que cambiarlo por lo de la parte nueva  */
+.messageContainer {
+    width: 150px;
+    height: 200px;
+    color: rgb(255, 255, 203);
+}
+#username {
+    color: black;
+}
+
+/* para la parte nueva de los mensajes */
+body {
+ background:url(https://i.pinimg.com/originals/53/6e/bb/536ebb3187a790312b55225dc73ca790.jpg) 
+ #cacaca; 
+ margin:30px;
+ background-size: contain;
+ background-repeat: repeat; 
+ background-position: 10px 30px;
+}
+
+#create, textarea  { 
+  float:left; 
+  padding:25px 25px 40px;
+  margin:0 20px 20px 0;
+  width:200px;
+  height:220px; 
+}
+
+#create {
+  user-select:none;
+  padding:20px; 
+  border-radius:20px;
+  text-align:center; 
+  border:15px solid rgba(0,0,0,0.1); 
+  cursor:pointer;
+  color:rgba(0,0,0,0.1);
+  font:220px "Helvetica", sans-serif;
+  line-height:185px;
+}
+
+#create:hover { border-color:rgba(0,0,0,0.2); color:rgba(0,0,0,0.2); }
+
+textarea {
+  font:20px 'Gloria Hallelujah', cursive; 
+  line-height:1.5;
+  border:0;
+  border-radius:3px;
+  background: linear-gradient(#F9EFAF, #F7E98D);
+  box-shadow:0 4px 6px rgba(0,0,0,0.1);
+  overflow:hidden;
+  transition:box-shadow 0.5s ease;
+  /* font-smoothing:subpixel-antialiased; */
+  max-width:520px;
+  max-height:250px;
+}
+textarea:hover { box-shadow:0 5px 8px rgba(0,0,0,0.15); }
+textarea:focus { box-shadow:0 5px 12px rgba(0,0,0,0.2); outline:none; }
+--}}
+
+
+
