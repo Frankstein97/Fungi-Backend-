@@ -103,52 +103,95 @@ h1 {
   border-radius: 10px;
 }
 
+
+
 /* >>>>>El Navbar>>>>>>>>>>> */
 
+
 nav {
-    position: absolute;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    z-index: 999;
-    top: 0;
-    left: 0;
-    width: 100%;
+  position: fixed;
+  display: flex;
+  width: 100%;
+  background-color:#333;
+  box-shadow: 0px 3px 20px 3px #162433;
 }
 
 .logo {
-  visibility: hidden;
   margin-right: 20px;
+  padding: 10px;
 }
 
 .logo img {
-  visibility: hidden;
   vertical-align: middle;
 }
 
 .nav-links {
   list-style-type: none;
   display: flex;
+  margin: 0 auto;
+  align-items: center;
+  flex-direction: row;
+  list-style: none;
 }
-
 .nav-links li {
   margin-right: 10px;
 }
 
-.nav-links a {
+.nav-links button {
   text-decoration: none;
-  color: #333;
-  padding: 5px;
+  background-color: #f3ba70;
+  padding: 0 20px;
   border-radius: 5px;
+  font-size: 16px;
+  height: 45px;
   transition: background-color 0.3s ease;
 }
-
-.nav-links a:hover {
-  background-color: #eaeaea;
+.nav-links button a {
+  color: black;
+  text-decoration: none;
+}
+.nav-links button:hover {
+  background-color: #f29808;
+}
+.nav-links button a:hover {
+  color: rgb(255, 255, 255);
 }
 
+.profileDropdown {
+position: fixed;
+right: 0;
+border-radius: none;
+border: 0px;
+}
 
+.profileDropdown ul {
+  list-style: none;
+  background-color: #f3ba70;
+	display: none;
+	position: absolute; 
+  top: 40px;
+  right: 0px;
+
+}
+.profileDropdown:hover > ul {
+	display:inherit;
+}
+.profileDropdown p {
+	width:170px;
+	float:none;
+	display:list-item;
+	position: relative;
+}
+.profileData {
+  padding: 10px 5px;
+  border-bottom: 2px solid white;
+}
+.logout {
+  background-color: #f23f08 !important;
+  margin: 10px 0px;
+}
 /* >>>>>>>>>>>>>>>>>>>>> */
+
 
 /* Estilos generales */
 
@@ -192,21 +235,3 @@ table td {
 #productsTable tbody tr:hover {
   background-color: #eaeaea;
 }
-
-/* Estilos para el enlace de inicio */
-a {
-  display: inline-block;
-  margin-top: 20px;
-  text-decoration: none;
-  color: #333;
-  border: 1px solid #333;
-  padding: 10px 20px;
-  background-color: #fff;
-  transition: background-color 0.3s ease;
-}
-
-a:hover {
-  background-color: #333;
-  color: #fff;
-}
-

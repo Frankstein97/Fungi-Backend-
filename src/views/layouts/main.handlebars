@@ -10,12 +10,33 @@
 <body>
     <nav>
   <div class="logo">
-    <a href="#"><img src="/logo.png" alt="Logo" height="100"></a>
+    <a href="#"><img src="/logo.png" alt="Logo" height="80"></a>
   </div>
   <ul class="nav-links">
-    <li><a href="http://localhost:8080">Inicio</a></li>
-    <li><a href="http://localhost:8080/api/products?page=1">Productos</a></li>
-    <li><a href="http://localhost:8080/carts/646d109f1f413db9427d855a">Carrito</a></li>  </ul>
+    <li><button><a href="http://localhost:8080">🏠 Inicio</a></button></li>
+    <li><button><a href="http://localhost:8080/api/products?page=1">🍄 Productos</a></button></li>
+    <li><button><a href="http://localhost:8080/carts/646d109f1f413db9427d855a">🛒Carrito</a></button></li>
+    <li><button><a href="http://localhost:8080/api/message">🗒 Messages</a></button></li>
+    <li class="profileDropdown"><button class="profile">👤{{user.name}} Coder</button>
+    <ul>
+      <li class="profileData">
+        <b>EMAIL:</b>
+        <p>{{user.email}}</p>
+      </li>
+      <li class="profileData">
+        <b>EDAD:</b>
+        <p>{{user.age}}</p>
+      </li>
+      <li class="profileData">
+        <b>User Rol:</b>
+        <p>{{user.role}}</p>
+      </li>
+      <li ><a href="/api/sessions/logout">
+      <button class="logout"> Cerrar Sesion 🚪</button>
+      </a></li>
+    </ul>
+    </li>
+  </ul>
 </nav>
     {{{ body }}}
 </body>
