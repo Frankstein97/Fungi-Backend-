@@ -1,5 +1,5 @@
-<div>
-  <h1>Lista de productos en el servidor <br /> MongoDB</h1>
+<div class="productsContainer">
+  <h1>Lista de productos en la database e  <br /> MongoDB</h1>
   {{!-- <div>
     <h1> Tu perfil </h1>
     <p>{{user.name}}</p>
@@ -13,7 +13,7 @@
 <br/>
   <table id="productsTable">
     <thead>
-      <tr>
+      <tr class="descriptionColumn">
         <th><strong>Producto</strong></th>
         <th><strong>Descripción</strong></th>
         <th><strong>Código</strong></th>
@@ -22,7 +22,7 @@
         <th><strong>Categoría</strong></th>
         <th><strong>Miniatura</strong></th>
         <th><strong>Detalles</strong></th>
-        <th><strong>Agregar al Carrito</strong></th>
+        <th><strong>Seleccionar</strong></th>
       </tr>
     </thead>
     <tbody>
@@ -43,9 +43,9 @@
                 height="150"
               />
             </td>
-
-            <td><a href="/products/{{this._id}}">Detalle</a></td>
-            <td><input type="submit" value="Agregar al Carrito" /></td>
+            
+            <td class="productDetail"><a href="/products/{{this._id}}"> Ver Producto</a></td>
+            <td class="productAdd"><input type="submit" value="Agregar al Carrito" /></td>
           </form>
         </tr>
       {{/each}}
@@ -53,10 +53,10 @@
   </table>
   <div>
     {{#if products.hasPrevPage}}
-      <a href="{{products.prevLink}}">Anterior</a>
+      <a class="buttonHasPage" href="{{products.prevLink}}">Anterior</a>
     {{/if}}
     {{#if products.hasNextPage}}
-      <a href="{{products.nextLink}}">Siguiente</a>
+      <a class="buttonHasPage" href="{{products.nextLink}}">Siguiente</a>
     {{/if}}
   </div>
 </div>

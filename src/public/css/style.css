@@ -171,17 +171,18 @@ border: 0px;
 	position: absolute; 
   top: 40px;
   right: 0px;
+  padding-right: 20px;
 
 }
 .profileDropdown:hover > ul {
 	display:inherit;
 }
-.profileDropdown p {
-	width:170px;
+/* .profileDropdown p { */
+	/* width:170px;
 	float:none;
 	display:list-item;
-	position: relative;
-}
+	position: relative; */
+/* } */
 .profileData {
   padding: 10px 5px;
   border-bottom: 2px solid white;
@@ -189,6 +190,7 @@ border: 0px;
 .logout {
   background-color: #f23f08 !important;
   margin: 10px 0px;
+  width: 120px;
 }
 /* >>>>>>>>>>>>>>>>>>>>> */
 
@@ -219,9 +221,20 @@ table td {
   border-bottom: 1px solid #ccc;
 }
 
-/* Estilos específicos para la tabla */
+/* Products List View */
+
+.productsContainer {
+padding: 8rem 2rem;
+}
+
+#productsTable {
+  border: 1px outset rgba(0, 0, 0, 0.317);
+}
+
 #productsTable th {
-  background-color: #f2f2f2;
+  margin: 1px solid black;
+  text-align: center;
+  background-color: #838383;
 }
 
 #productsTable td {
@@ -233,5 +246,33 @@ table td {
 }
 
 #productsTable tbody tr:hover {
-  background-color: #eaeaea;
+  background-color: #f3ba70;
+}
+.productDetail {
+  text-align: center;
+
+}
+.productDetail a {
+  padding: 20px;
+  font-size: 18px;
+  text-decoration: none;
+}
+.productAdd input {
+  font-size: 18px;
+}
+.productDetail:hover{
+  background-color: #f29808;
+}
+.productAdd:hover {
+  background-color: #f29808;
+}
+.buttonHasPage {
+  color: black;
+  text-decoration: none;
+  background-color: #f3ba70;
+  padding: 10px 30px;
+  border-radius: 5px;
+  font-size: 18px;
+  height: 45px;
+  transition: background-color 0.3s ease;
 }
