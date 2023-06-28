@@ -2,11 +2,42 @@ import passport from "passport";
 import local from 'passport-local';
 import userModel from "../dao/models/users.model.js";
 import { createHash, isValidPassword } from "../utils.js";
+import GitHubStrategy from 'passport-github2'
 
 const localStrategy = local.Strategy;
 
 // usare un middleware
 const initializePassport = () => {
+
+    passport.use('github', new GitHubStrategy({
+        clientID: "Iv1.98dcde9793d7d8ec",
+        clientSecret: "e767113e34e734a0bc469d42e1a5cba4396f77fc",
+        callbackURL: "http://localhost:8080/api/sessions/github-callback",
+        scope: ['user:email']
+    }, async (accessToken, refreshToken, profile, done) => {
+        try {
+            const email = profile.emails[0].value;
+            const user = await userModel.findOne ({email})       
+        if(!user) {
+            const newUser ={
+                first_name: profile._json.name,
+                last_name: '',
+                age: 18, 
+                email, 
+                password: '' 
+            }
+            const result = await userModel.create(newUser);
+            done(null, result); 
+        } else {
+            done(null, user);
+        }
+        } catch (error) {
+            return done (error)
+        }
+    }))
+
+
+    // ESTO ES DE ESTRATEGIA LOCAL
     passport.use ('register', new localStrategy ({
         passReqToCallback: true, //permitira acceder a req como middleware
         usernameField: 'email'
@@ -46,8 +77,11 @@ const initializePassport = () => {
             
         }
     }))
+
+
+    //ESTO ES PARA SERIALIZAR CONTRASEÑAS Y ENCONTRARLAS POR ID
     passport.serializeUser((user, done) => {
-    done (null,user._id);
+    done (null, user._id);
 });
     passport.deserializeUser(async (id,done) => {
         const user = await userModel.findById(id)

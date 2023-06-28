@@ -27,6 +27,7 @@ router.get("/", privateAccess, (req, res) => {
   });
 });
 
+
 // router.get('/products', privateAccess, async (req, res) => {
 //   const { limit = 10, page = 1, query = false, sort } = req.query;
 //   console.log(req.session.user);

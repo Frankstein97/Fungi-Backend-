@@ -3,6 +3,17 @@ import passport from "passport";
 
 const router = Router();
 
+router.get('/github', passport.authenticate('github', {scope: ['user:email'] }),
+async (req, res) => {
+  res.send({status:"success", message: "usuario registrado por github"}) 
+});
+
+router.get('/github-callback', passport.authenticate('github', {failureRedirect: '/login'}),
+async (req, res) => {
+  req.session.user = req.user
+  res.redirect('/api/products')
+})
+
 router.post("/register", passport.authenticate('register', {failureRedirect : 'fail-register'}), async (req, res) => {
   //la logica fue trasladada al passport
   res.send({ status: "success", message: "user registred" });
@@ -23,6 +34,7 @@ router.post('/login', passport.authenticate('login', {failureRedirect: '/'}), as
   };
   res.send({status: 'error', error: 'Login failed'});
 
+      //esto igual esta cargado en la DB
       //   if (email === 'adminCoder@coder.com' && password === 'adminCod3r123') {
       //     req.session.user = {
       //         name: `Coder House`,

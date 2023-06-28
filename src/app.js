@@ -45,6 +45,7 @@ app.use(session({
     saveUninitialized: true
 }));
 
+
 //inicializar middleware passport
 initializePassport();
 app.use(passport.initialize());
@@ -55,6 +56,7 @@ app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
 // Carpeta publica para fotos/info/login de usuarios de acceso publico
 app.use(express.static(`${__dirname}/public`));
+
 
 //Configurar el handlebars y vistas
 app.engine('handlebars', handlebars.engine())

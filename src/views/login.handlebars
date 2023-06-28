@@ -4,16 +4,21 @@
          BACKWORLD!!</h1>
     <div class="loginFormContainer">
     <form id="loginForm">
-    <input class="input" placeholder="Email" name="email">
+    <input class="loginInput" placeholder="Email" name="email">
     <br/>
-    <input placeholder="password" name="password" type="text">
+    <input class="loginInput" placeholder="Password" name="password" type="text">
     <br>
-    <input type="submit">
+    <input class="loginSubmit" Value="Log In" type="submit">
     </form>
-    <p>¿No estas registradx? 
+    <p class="notRegister">¿No estas registradx? 
     <br>
-    <a href="/register">Registrate aca!!</a>
+    <a class="linkRegister" href="/register">Registrate aca!!</a>
     </p>
+    <div class="githubPass">
+        <img class="githublogo" src="img/github.png" alt="Logo de GitHub">
+        <a href="/api/sessions/github"><button>Ingresar con GitHub</button></a>
     </div>
+    </div>
+
 </div>
 <script src="/js/login.js"></script>

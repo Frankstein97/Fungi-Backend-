@@ -42,17 +42,34 @@ html, body {
     background-color: rgba(0, 0, 0, 0.4);
     backdrop-filter: blur(3px);
     justify-content: space-around;
+    align-items: center;
 }
-.input{
+.loginInput{
   height: 2rem;
   margin-bottom: 2rem;
   border: none;
   border-top: none;
-  border-radius: 0 0 10px 10px;
-  background-color: transparent;
+  /* border-radius: 5px 0 5px 0px; */
+  box-shadow: #333;
   background-image: linear-gradient(#ffffff00, #ffffff12, #ffffff17);
-
 }
+.loginInput::placeholder{
+  font-size: 18px;
+  padding-left: 0.5rem;
+}
+.loginSubmit {
+  width: 12rem;
+  background:#47b865e5;
+  height: 2rem;
+  border-radius: 10px;
+  font-size: 18px;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.notRegister {
+  color: white;
+}
+
 h1 {
   color: #333;
   text-align: center;
@@ -136,18 +153,49 @@ nav {
 }
 
 .nav-links a {
+  display: inline-block;
   text-decoration: none;
+  margin-top: 20px;
   color: #333;
+  border: 1px solid #333;
   padding: 5px;
+  padding: 10px 20px;
   border-radius: 5px;
   transition: background-color 0.3s ease;
+  background-color: #fff;
 }
 
 .nav-links a:hover {
   background-color: #eaeaea;
+  color: #fff;
 }
-
-
+.notRegister {
+  font-size: 16px;
+}
+.linkRegister {
+  color: rgb(90, 121, 194);
+  text-decoration: none;
+}
+.githubPass {
+display: flex;
+align-items: center;
+background-color: #1B1F23;
+width: 12rem;
+}
+.githubPass  button {
+  border: none;
+  background: none;
+  color: white;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  outline: none;
+  background-color: #1B1F23;
+}
+.githublogo {
+  margin-right: 1rem;
+width: 40px;
+}
 /* >>>>>>>>>>>>>>>>>>>>> */
 
 /* Estilos generales */
@@ -194,19 +242,5 @@ table td {
 }
 
 /* Estilos para el enlace de inicio */
-a {
-  display: inline-block;
-  margin-top: 20px;
-  text-decoration: none;
-  color: #333;
-  border: 1px solid #333;
-  padding: 10px 20px;
-  background-color: #fff;
-  transition: background-color 0.3s ease;
-}
 
-a:hover {
-  background-color: #333;
-  color: #fff;
-}
 
