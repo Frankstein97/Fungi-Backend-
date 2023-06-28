@@ -1,24 +1,25 @@
 <div class="registerContainer">
-    <h1>REGISTRATE</h1>
     <form id="registerForm">
-        <label>Nombre</label>
-        <input name="first_name">
+        <h1>REGISTRATE</h1>
+        {{!-- <label>Nombre</label> --}}
+        <input class="loginInput" placeholder="Nombre" name="first_name">
         <br/>
-        <label>Apellido</label>
-        <input name="last_name">
+        {{!-- <label>Apellido</label> --}}
+        <input class="loginInput" placeholder="Apellido" name="last_name">
         <br/>
-        <label>Email</label>
-        <input name="email">
+        {{!-- <label>Email</label> --}}
+        <input class="loginInput" placeholder="Email" name="email">
         <br/>
-        <label>Edad</label>
-        <input name="age">
+        {{!-- <label>Edad</label> --}}
+        <input class="loginInput" placeholder="Edad" name="age">
         <br/>
-        <label>Contraseña</label>
-        <input name="password" type="password">
+        {{!-- <label>Contraseña</label> --}}
+        <input class="loginInput" placeholder="Contraseña" name="password" type="password">
         <br/>
-        <input type="submit">
+        <input class="loginSubmit" type="submit">
+            <p>Si ya tenes cuenta <a class="linkRegister" href="/login">ingresa aqui!</a></p>
+
     </form>
-    <p>Si ya tenes cuenta <a href="/login">ingresa aqui!</a></p>
 </div>
 
 <script src="/js/register.js"></script>

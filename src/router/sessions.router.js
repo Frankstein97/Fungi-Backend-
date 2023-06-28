@@ -3,25 +3,11 @@ import passport from "passport";
 
 const router = Router();
 
-router.get('/github', passport.authenticate('github', {scope: ['user:email'] }),
-async (req, res) => {
-  res.send({status:"success", message: "usuario registrado por github"}) 
-});
-
-router.get('/github-callback', passport.authenticate('github', {failureRedirect: '/login'}),
-async (req, res) => {
-  req.session.user = req.user
-  res.redirect('/api/products')
-})
-
-router.post("/register", passport.authenticate('register', {failureRedirect : 'fail-register'}), async (req, res) => {
+router.post("/register", passport.authenticate('register', {failureRedirect : '/'}), async (req, res) => {
   //la logica fue trasladada al passport
   res.send({ status: "success", message: "user registred" });
 });
 
-router.get('/fail-register', async (req,res) => {
-  res.send ({status:'error ', message: 'Register failed'});
-})
 
 router.post('/login', passport.authenticate('login', {failureRedirect: '/'}), async (req, res) => {
   if(!req.user) return res.status(500).send({status: 'error', error: 'Invalis Credentials'});
@@ -50,9 +36,24 @@ router.post('/login', passport.authenticate('login', {failureRedirect: '/'}), as
 
 });
 
+router.get('/github', passport.authenticate('github', {scope: ['user:email'] }),
+async (req, res) => {
+  res.send({status:"success", message: "usuario registrado por github"}) 
+});
+
+router.get('/github-callback', passport.authenticate('github', {failureRedirect: 'login'}),
+async (req, res) => {
+  req.session.user = req.user
+  res.redirect('/api/products')
+})
+
+// router.get('/fail-register', async (req,res) => {
+//   res.send ({status:'error ', message: 'Register failed'});
+// })
+
 router.get("/logout", (req, res) => {
     req.session.destroy (err => {
-        if(err) return res.status(500).send({ status: "error", error: "logout fail" });
+        if(err) return res.status(500).send({ status: "error", error: "Logout fail" });
         res.redirect("/")
     })
 });
